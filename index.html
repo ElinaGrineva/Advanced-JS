@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html">
+                <p class="logo">Elina's shop</p>
+            </a>
+            <div class="basket">
+                <form action="#" class="form-box" @submit.prevent="filter">
+                    <input class="inpt-search" type="search" v-model="userSearch">
+                    <button class="btn-search">Поиск</button>
+                </form>
+                <button class="cart-button" type="button" @click="show=!show">Корзина</button>
+                <div class="cart-box" v-show="show">
+                    <p v-if="!cartItems.length" class="cart-msg">Корзина пуста</p>
+                    <div class="cart-block">
+                        <p v-if="!cartItems.length">Корзина пуста</p>
+                        <div class="cart-product" v-for="item of cartItems">
+                            <img :src="item.img" class="img-cart" alt="photo">
+                            <div class="right">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="price">Кол-во: {{ item.quantity }}</p>
+                                <p class="price">{{ item.price }} руб.</p>
+                                <button class="btn-remove" @click="remove(item)">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="goods-list">
+                <div class="cart" v-for="item of filtered">
+                    <img :src="item.img" class="img" alt="photo">
+                    <h4 class="title">{{ item.title }}</h4>
+                    <p class="price">{{ item.price }} рублей</p>
+                    <button class="buy-cart" @click="addProduct(item)">Купить</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
