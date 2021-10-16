@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html">
+                <p class="logo">Elina's shop</p>
+            </a>
+            <div class="basket">
+                <filter-form></filter-form>
+                <cart ref="cart"></cart>
+            </div>
+        </header>
+        <main>
+            <div class="new_top">
+                <img class="image_poster_top" src="" alt="poster">
+            </div>
+            <error-msg v-if="showError"></error-msg>
+            <products ref="products"></products>
+        </main>
+        <footer>
+            <div class="contacts">
+                <ul class="callback">
+                    <li>Почта:&nbsp;<span class="footer-text">shop@mail.ru</span></li>
+                    <li>Телефон:&nbsp; <span class="footer-text">000-00-00</span></li>
+                    <li>Адрес:&nbsp; <span class="footer-text">г. Санкт-Петербург</span></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/FilterComponent.js"></script>
+    <script src="js/errorComponent.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
