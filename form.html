@@ -1,0 +1,41 @@
+<!-- *Создать форму обратной связи с полями: Имя, Телефон, E-mail, текст, кнопка Отправить. При нажатии на кнопку Отправить произвести валидацию полей следующим образом:
+a. Имя содержит только буквы.
+b. Телефон имеет вид +7(000)000-0000.
+c. E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.
+d. Текст произвольный.
+e. Если одно из полей не прошло валидацию, необходимо выделить это поле красной рамкой и сообщить пользователю об ошибке. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        .invalid {
+            border: 2px solid red;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>Регистрационная форма:</legend>
+            <p>Введите имя пользователя:</p>
+            <input class="name" type="text">
+            <p>Введите телефон:</p>
+            <input class="phone" type="text">
+            <p>Укажите почту:</p>
+            <input class="email" type="text">
+            <p>Комментарии:</p>
+            <textarea style="height: 100px; width: 172px;"></textarea><br>
+            <button class="form-btn">Отправить</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
